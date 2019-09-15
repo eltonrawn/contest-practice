@@ -89,6 +89,48 @@ public:
     }
 };
 
+/*****************************************************************************/
+///vector starts
+class Vector {
+public:
+    double x, y;
+    Vector() {}
+    Vector(double _x,double _y)
+    {
+        x = _x;
+        y = _y;
+    }
+};
+
+class Cmp  {
+public:
+    bool operator()(Vector a, Vector b) {
+        if(a.x == b.x)    {
+            return a.y < b.y;
+        }
+        return a.x < b.x;
+    }
+};
+
+class Equal  {
+public:
+    bool operator()(Vector a, Vector b) {
+        if((a.x == b.x) && (a.y == b.y))    {
+            return true;
+        }
+        return false;
+    }
+};
+
+Vector vector_add(Vector a, Vector b)   {
+    return Vector(a.x + b.x, a.y + b.y);
+}
+Vector vector_sub(Vector a, Vector b)   {
+    return Vector(a.x - b.x, a.y - b.y);
+}
+///vector ends
+/*****************************************************************************/
+
 //class Polygon {
 //public:
 //    int n;
@@ -180,7 +222,7 @@ double circle_area(double r)   {
     return pi * r * r;
 }
 
-Volume
+Volume:
 double cylinder_volume(double r, double h)   {
     return pi * r * r * h;
 }
@@ -192,7 +234,45 @@ int polygon_sum_of_exterior_angles() {
     return 360;
 }
 
+Perimeter:
+/**
+pi is ratio of circle's circumference(perimeter) to it's diameter
+pi = circumference / diameter
+circumference = pi * diameter
+circumference = pi * 2 * radius
+*/
+double circle_perimeter(double r)   {
+    return 2 * pi * r;
+}
 /**
 triangle inequality: The longest side must be shorter than the sum of the rest.
 polygon inequality: The longest side must be shorter than the sum of the rest.
+law of cosine: a^2 = b^2 + c^2 - 2bc*cosA where, a, b and c are three sides and A is angle opposite to a
 */
+
+
+/**********************************************************************************************************************/
+#include<bits/stdc++.h>
+
+using namespace std;
+
+#define FOR(i, j, k) for(int i = j; i <= k; i++)
+#define ROF(i, j, k) for(int i = j; i >= k; i--)
+#define PB push_back
+#define MEM(n, val) memset((n), val, sizeof(n))
+#define F first
+#define S second
+#define MP make_pair
+#define LL long long
+#define MOD 1000000007
+#define INF 1000000000
+#define MX 300010
+#define pi 2.0*acos(0.0)
+
+typedef pair<int, int> PII;
+
+int main()  {
+//    freopen("input.txt", "r", stdin);
+//    freopen("output0.txt", "w", stdout);
+    return 0;
+}
