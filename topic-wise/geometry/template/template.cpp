@@ -244,10 +244,23 @@ circumference = pi * 2 * radius
 double circle_perimeter(double r)   {
     return 2 * pi * r;
 }
+
+Angle:
+/**
+get angle A given three sides a, b and c using law of cosine. A is opposite to a.
+cosA = ((b * b) + (c * c) - (a * a)) / (2 * b * c)
+*/
+double angle_sss(double a, double b, double c) {
+    return acos(((b * b) + (c * c) - (a * a)) / (2 * b * c));
+}
+
 /**
 triangle inequality: The longest side must be shorter than the sum of the rest.
 polygon inequality: The longest side must be shorter than the sum of the rest.
 law of cosine: a^2 = b^2 + c^2 - 2bc*cosA where, a, b and c are three sides and A is angle opposite to a
+
+https://www.mathsisfun.com/algebra/trig-solving-triangles.html
+review it later for solving triangles
 */
 
 
