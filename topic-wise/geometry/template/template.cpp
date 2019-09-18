@@ -261,7 +261,14 @@ law of cosine: a^2 = b^2 + c^2 - 2bc*cosA where, a, b and c are three sides and 
 
 https://www.mathsisfun.com/algebra/trig-solving-triangles.html
 review it later for solving triangles
+
+PROPERTIES OF REGULAR POLYGONS (N sides)
+1. They have n equal sides.
+2. They have n equal exterior angles each of 360/n degrees.
+3. They have n equal interior angles each of (180 - 360/n) degrees.
+for more: https://www.quora.com/What-are-the-properties-of-regular-convex-polygons
 */
+
 
 
 /**********************************************************************************************************************/
