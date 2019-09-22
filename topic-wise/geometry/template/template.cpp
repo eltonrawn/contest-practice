@@ -131,6 +131,38 @@ Vector vector_sub(Vector a, Vector b)   {
 ///vector ends
 /*****************************************************************************/
 
+
+/*****************************************************************************/
+///vector with n dimensions starts
+class Vector {
+public:
+    vector<double> dim;///dim means dimensions
+    Vector()    {
+    }
+    Vector(double x, double y)    {
+        dim.PB(x);
+        dim.PB(y);
+    }
+};
+
+double dot_product(Vector a, Vector b)   {
+    if(a.dim.size() != b.dim.size())    {
+        return -1;
+    }
+    double ans = 0;
+    FOR(i, 0, (int)a.dim.size() - 1)   {
+        ans += (a.dim[i] * b.dim[i]);
+    }
+    return ans;
+}
+
+double vec_len(Vector a)    {
+    return sqrt(dot_product(a, a));
+}
+
+///vector with n dimensions ends
+/*****************************************************************************/
+
 //class Polygon {
 //public:
 //    int n;
