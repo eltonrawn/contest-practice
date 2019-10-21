@@ -20,23 +20,74 @@ typedef pair<int, int> PII;
 int n, m;
 int ara[100010];
 
-int func(int pos, int ara_p)  {
-    ///make trick
-
-    ///keep here
-    if(ara[ ara_p ] == pos)    {
-        func(pos + 1, val);
+bool func1(int pos)  {
+    int cur = pos;
+    FOR(i, 0, m - 1)   {
+        if(cur == (ara[i] - 1))    {
+            continue;
+        }
+        cur++;
     }
+    cur++;
+    if(cur >= n)    {
+        return 1;
+    }
+    return 0;
+}
 
+bool func2(int pos)  {
+    int cur = pos;
+    FOR(i, 0, m - 1)   {
+        if(cur == (ara[i] + 1))    {
+            continue;
+        }
+        cur--;
+    }
+    cur--;
+    if(cur <= 1)    {
+        return 1;
+    }
+    return 0;
 }
 
 int main()  {
-//    freopen("in.txt", "r", stdin);
+    freopen("in.txt", "r", stdin);
 //    freopen("output0.txt", "w", stdout);
     cin >> n >> m;
     FOR(i, 0, m - 1)   {
         cin >> ara[i];
     }
+
+//    cout << func2(4) << "\n";
+
+    int lo, hi;
+    lo = 1;hi = n;
+    while(lo < hi) {
+        int mid = lo + ((hi - lo) / 2);
+        if(func1(mid))    {
+            hi = mid;
+        }
+        else    {
+            lo = mid + 1;
+        }
+    }
+    LL ans = n * (LL)(n);
+    ans -= (LL)(lo - 1LL);
+//    cout << lo << "\n";
+
+    lo = 1;hi = n;
+    while(lo < hi) {
+        int mid = lo + ((hi - lo + 1) / 2);
+        if(func2(mid))    {
+            lo = mid;
+        }
+        else    {
+            hi = mid - 1;
+        }
+    }
+//    cout << lo << "\n";
+    ans -= (LL)(n - lo);
+    cout << ans;
 
     return 0;
 }
