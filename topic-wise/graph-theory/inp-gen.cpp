@@ -20,14 +20,15 @@ typedef pair<int, int> PII;
 
 
 int main()  {
+    srand(time(NULL));
     freopen("in.txt", "w", stdout);
 //    freopen("output0.txt", "w", stdout);
     int n, m;
-    n = 80000;
-    m = 1100;
+    n = 100000;
+    m = 10000;
     cout << n << " " << m << "\n";
     FOR(i, 0, m - 1)   {
-        cout << 62329 << " ";
+        cout << (rand() % n) + 1 << " ";
     }
     return 0;
 }
